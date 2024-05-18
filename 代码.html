@@ -1,0 +1,215 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>云编程学习平台</title>  
+<link rel="stylesheet" href="s.css">  
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script> 
+<style>  
+    /* 样式定义 */  
+    .popup {  
+      display: none;  
+      position: fixed;  
+      z-index: 1;  
+      left: 0;  
+      top: 0;  
+      width: 100%;  
+      height: 100%;  
+      overflow: auto;  
+      background-color: rgba(0,0,0,0.4);  
+    }  
+    
+    .popup-content {  
+      background-color: #fefefe;  
+      margin: 15% auto;  
+      padding: 20px;  
+      border: 1px solid #888;  
+      width: 80%;  
+    }  
+    
+    .close {  
+      color: #aaa;  
+      float: right;  
+      font-size: 28px;  
+      font-weight: bold;  
+    }  
+    
+    .close:hover,  
+    .close:focus {  
+      color: black;  
+      text-decoration: none;  
+      cursor: pointer;  
+    }  
+  </style>  
+</head>  
+<body>  
+  
+<div class="image-with-text">  
+    <img src="home-banner@2x.jpg" alt="产品落地页图片">  
+    <div class="text-overlay">  
+        <h1>云端编程，浏览器里边学边练</h1>  
+        <p>软件定义一切，网络连接时空，学习软件技术，创造未来世界。</p>  
+    </div> 
+
+    <div class="textleft">
+        <img src="logo-white.svg">
+    </div>
+
+    <div class="buttons-container"> <!-- 新增一个容器来包含按钮 -->  
+        <button id="loginButton" class="login-btn" onclick="showPopup('login')">登录</button> 
+        <button class="register-btn" onclick="showPopup('register')">注册</button>
+    </div> 
+
+    <div class="buttons-container2">
+         <button id="learnButton5" class="mashang">马上学习</button>
+    </div>
+
+</div>  
+  
+<!--第一张图片到此 -->  
+<div class="aligned-div">  
+    <img src="img-lab@2x.png" alt="描述性文本">
+    <h2>高级Web编程实验室</h2>  
+    <p>每人拥有自己完全独立的编程实验室，内置所有基础软件及学习素材。打开浏览器，即刻开始编程！</p>
+    <a href="#">
+    <div class="bordered-text">  
+        <p id="knowMoreButton1">了解详情</p>  
+    </div>  
+    </a>
+</div>
+  
+<!--第二张图片到此-->
+<div class="aligned-div">  
+    <img src="img-screens@2x.png" alt="描述性文本">
+    <h2>双屏学习</h2>  
+    <p>双屏学习，小屏视频互动，大屏实际操作，学习无障碍。打开浏览器，即刻开始编程！</p>
+    <a href="#">
+    <div class="bordered-text">  
+        <p id="knowMoreButton2">了解详情</p>   
+    </div>
+    </a>  
+</div>
+
+<div class="aligned-div"><h3>课程特色</h3></div>
+
+
+<div style="display: flex;" class="aligned-div">  
+<div  >
+    <img src="文件管理.svg" class="svg-ico">
+    <h3>丰富的教学服务</h3>
+    <p>特色教学服务功能，各种配套教学服务，在线学习从未如此轻松。</p>
+    <p id="learnButton1">马上学习</p> 
+</div>
+
+<div >
+    <img src="人员.svg" class="svg-ico">
+    <h3>多元的学习方式</h3>
+    <p>知识提炼、答疑解惑、实时互动、开发有特色的教学服务方式。</p>
+    <p id="learnButton2">马上学习</p> 
+</div>
+
+<div  >
+    <img src="写文档.svg" class="svg-ico">
+    <h3>高品质的学习体验</h3>
+    <p>多屏合一，随时学习，随时在线，学习记录一目了然，知识充电不再受限。</p>
+    <p id="learnButton3">马上学习</p>
+</div>
+
+</div>
+
+<!--登录和注册-->
+<div id="loginPopup" class="popup">  
+    <div class="popup-content">  
+      <span class="close" onclick="closePopup('login')">&times;</span>  
+      <h3>登录</h3>  
+      <p>输入你的账号和密码</p>  
+      <form>  
+        <label for="username"><b>用户名</b></label>  
+        <input type="text" placeholder="Enter Username" name="username" required>  
+    
+        <label for="psw"><b>密码</b></label>  
+        <input type="password" placeholder="Enter Password" name="psw" required>  
+    
+        <button type="submit">登录</button>  
+      </form>  
+    </div>  
+  </div>  
+    
+  <div id="registerPopup" class="popup">  
+    <div class="popup-content">  
+      <span class="close" onclick="closePopup('register')">&times;</span>  
+      <h3>注册</h3>  
+      <p>注册你的账号</p>  
+      <form>  
+        <label for="username"><b>用户名</b></label>  
+        <input type="text" placeholder="Enter Username" name="username" required>  
+        <label for="psw"><b>密码</b></label>  
+        <input type="password" placeholder="Enter Password" name="psw" required>  
+    
+        <button type="submit">注册</button>  
+      </form>  
+    </div>  
+  </div>  
+    
+  <script>  
+    function showPopup(popupId) {  
+      var popup = document.getElementById(popupId + 'Popup');  
+      popup.style.display = "block";  
+    }  
+    
+    function closePopup(popupId) {  
+      var popup = document.getElementById(popupId + 'Popup');  
+      popup.style.display = "none";  
+    }  
+    
+    // 登录表单的提交处理函数  
+    function handleLogin(event) {  
+      event.preventDefault(); // 阻止表单默认的提交行为  
+      var username = document.querySelector('#loginPopup input[name="username"]').value;  
+      var password = document.querySelector('#loginPopup input[name="psw"]').value;  
+    
+      // 发送登录请求至后端接口进行验证  
+      fetch('http://localhost:3000/login', {  
+        method: 'POST',  
+        headers: {  
+          'Content-Type': 'application/json'  
+        },  
+        body: JSON.stringify({  
+          username: username,  
+          password: password  
+        })  
+      })  
+      .then(response => {  
+        if (response.ok) {  
+          return response.json();  
+        } else {  
+          throw new Error('Network response was not ok.');  
+        }  
+      })  
+      .then(data => {  
+        // 登录成功处理逻辑  
+        console.log('Login successful:', data);  
+        // 可以在这里关闭弹出框，或跳转到其他页面等  
+        closePopup('login');  
+      })  
+      .catch(error => {  
+        // 登录失败处理逻辑  
+        console.error('There has been a problem with your login:', error);  
+        // 可以在这里显示错误消息等 
+         
+      });  
+    }  
+    
+    // 为登录表单添加提交事件监听器  
+    document.querySelector('#loginPopup form').addEventListener('submit', handleLogin);  
+    
+    // 阻止弹出框外点击事件（保持不变）  
+  </script> 
+
+<footer>
+    <small> ©2024 云端科技 Artech All rights reserved </small>
+  </footer>
+  <script src="button.js"></script>
+</body>  
+</html>

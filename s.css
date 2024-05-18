@@ -1,0 +1,166 @@
+
+
+    /* styles.css */  
+.image-with-text {  
+    position: relative;  
+    width: 100%; /* 或者你需要的任何宽度 */  
+    max-width: 1000px; /* 例如，限制最大宽度为600像素 */  
+    margin: 0 auto; /* 水平居中 */  
+}  
+  
+.image-with-text img {  
+    width: 100%;  
+    height: auto;  
+    display: block;  
+}  
+  
+.image-with-text .text-overlay {  
+    position: absolute;  
+    top: 50%; /* 从顶部开始，向下偏移50% */  
+    left: 50%; /* 从左侧开始，向右偏移50% */  
+    transform: translate(-50%, -50%); /* 相对于自身宽度和高度的50%来定位 */  
+    color: white; /* 文本颜色 */  
+    text-align: center; /* 文本居中对齐 */  
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 文本阴影，增加可读性 */  
+    z-index: 1; /* 确保文本在图片上方 */  
+}
+
+.image-with-text .textleft {  
+    position: absolute;  
+    top: 10%; /* 从顶部开始，向下偏移50% */  
+    left: 14%; /* 从左侧开始，向右偏移50% */  
+    transform: translate(-50%, -50%); /* 相对于自身宽度和高度的50%来定位 */  
+    color: white; /* 文本颜色 */  
+    text-align: center; /* 文本居中对齐 */  
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 文本阴影，增加可读性 */  
+    z-index: 1; /* 确保文本在图片上方 */  
+}
+
+.image-with-text .textright {  
+    position: absolute;  
+    top: 10%; /* 从顶部开始，向下偏移50% */  
+    left: 86%; /* 从左侧开始，向右偏移50% */  
+    transform: translate(-50%, -50%); /* 相对于自身宽度和高度的50%来定位 */  
+    color: white; /* 文本颜色 */  
+    text-align: center; /* 文本居中对齐 */  
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 文本阴影，增加可读性 */  
+    z-index: 1; /* 确保文本在图片上方 */  
+}
+
+/*button样式*/
+.buttons-container {  
+    position: absolute;  
+    top: 20px; /* 距离图片顶部的距离 */  
+    right: 20px; /* 距离图片左侧的距离 */  
+    display: flex;  
+    justify-content: space-between; /* 按钮之间有一些间距 */  
+}  
+  
+.login-btn, .register-btn {  
+    background-color: #2063f2; /* 按钮背景色 */  
+     
+    color: white; /* 文字颜色 */  
+    padding: 10px 20px; /* 内边距 */  
+    text-align: center; /* 文字居中 */  
+    text-decoration: none; /* 无文本装饰 */  
+    display: inline-block; /* 内联块级元素 */  
+    font-size: 16px; /* 字体大小 */  
+    cursor: pointer; /* 鼠标悬停时变为小手 */  
+    border-radius: 5px; /* 圆角 */  
+}  
+  
+.login-btn:hover, .register-btn:hover, .mashang:hover {  
+    background-color: #45a049; /* 鼠标悬停时的背景色 */  
+}
+
+.buttons-container2 {  
+    position: absolute;  
+    top: 75%; /* 将容器顶部设置为图片高度的50% */  
+    left: 50%; /* 将容器左侧设置为图片宽度的50% */  
+    transform: translate(-50%, -50%); /* 相对于自身尺寸移动容器，使其居中 */  
+    display: flex;  
+     
+    align-items: center; /* 确保按钮垂直居中（如果按钮高度不同） */  
+}   
+.mashang {  
+    background-color: #e9eaed; /* 按钮背景色 */  
+    border: none; /* 无边框 */ 
+    color: #2063f2; /* 文字颜色 */  
+    padding: 10px 20px; /* 内边距 */  
+    text-align: center; /* 文字居中 */  
+    text-decoration: none; /* 无文本装饰 */  
+    display: inline-block; /* 内联块级元素 */  
+    font-size: 16px; /* 字体大小 */  
+    cursor: pointer; /* 鼠标悬停时变为小手 */  
+    border-radius: 5px; /* 圆角 */  
+} 
+
+/* 响应式布局样式 */  
+@media (max-width: 600px) {  
+    .image-with-text {  
+        max-width: 100%; /* 在小屏幕上，图片和文字覆盖层将占据整个屏幕宽度 */  
+    }  
+      
+    /* 其他的响应式样式 */  
+}
+
+/*第二张图片*/
+
+.aligned-div{  
+    position: relative;  
+    width: 100%; /* 或者你需要的任何宽度 */  
+    max-width: 1000px; /* 例如，限制最大宽度为600像素 */  
+    margin: 0 auto; /* 水平居中 */  
+}  
+
+.aligned-div img {  
+    display: block;  
+    margin-bottom: 10px; /* 图片与文本之间的间距 */  
+}  
+  
+.aligned-div p {  
+    /* 文本样式 */  
+}
+
+/*边框包围文字类*/
+.bordered-text {  
+    text-align: center; /* 水平居中单行文本 */  
+    border: 1px solid #000; /* 边框样式 */  
+    padding: 10px; /* 内边距 */  
+    margin-top: 10px; /* 上外边距 */  
+}
+
+ 
+.svg-ico {  
+    /* 假设h3的行高加上一些间距是你想要的SVG的高度 */  
+    height: 2em; /* 假设h3的行高是1.5em，你可以根据实际情况调整这个值 */  
+    /* 不设置宽度，或者设置为auto以保持原始宽高比 */  
+    width: auto;  
+    /* 垂直居中对齐 */  
+    vertical-align: middle;  
+    /* 添加一些下边距以匹配文本元素之间的间距 */  
+    margin-bottom: 0.5em;  
+    /* 也可以添加一些右边距来与旁边的文本分隔开 */  
+    margin-right: 0.5em;  
+}
+
+h3 {  
+    /* h3的样式 */  
+    line-height: 1.5em; /* 示例行高 */  
+    font-size: 1.2em; /* 示例字体大小 */  
+    /* 其他样式 */  
+}  
+  
+p {  
+    /* p的样式 */  
+    line-height: 1.2em; /* 示例行高 */  
+    font-size: 1em; /* 示例字体大小 */  
+    /* 其他样式 */  
+}  
+
+footer {
+    text-align: center;
+    padding: 5px;
+    background-color: #abbaba;
+    color: #000;
+  }
